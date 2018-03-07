@@ -7,7 +7,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/twatts', require('./routes/twatts'));
+app.use('/api/twatts', require('./routes/twatts'));
 
 
 module.exports = app;
