@@ -45,7 +45,7 @@ module.exports = {
     )
   },
 
-  twattPost: (req, res) => {
+  twattNewPost: (req, res) => {
     Twitter.post(
       'https://api.twitter.com/1.1/statuses/update.json',
       process.env.TOKEN_USERKEY, process.env.TOKEN_USERSECRET, { 'status' : req.body.status },
