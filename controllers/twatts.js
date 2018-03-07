@@ -43,5 +43,16 @@ module.exports = {
         else { res.status(200).send(JSON.parse(data)) }
       }
     )
+  },
+
+  twattPost: (req, res) => {
+    Twitter.post(
+      'https://api.twitter.com/1.1/statuses/update.json',
+      process.env.TOKEN_USERKEY, process.env.TOKEN_USERSECRET, { 'status' : req.body.status },
+      (err, data, result) => {
+        if (err) { res.status(400).send(JSON.parse(err.message)) }
+        else { res.status(200).send(JSON.parse(data)) }
+      }
+    )
   }
 }
